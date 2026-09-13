@@ -22,15 +22,15 @@ public class Emprestimos {
     @Column(name = "data_emprestimo" , nullable = false)
     private LocalDateTime dataEmprestimo;
 
-    @Column(name = "data_devolucao" , nullable = false)
+    @Column(name = "data_devolucao" )
     private LocalDateTime dataDevolucao;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "livro_id")
+    @JoinColumn(name = "livro_id", nullable = false)
     private Livro livro;
 
 }
