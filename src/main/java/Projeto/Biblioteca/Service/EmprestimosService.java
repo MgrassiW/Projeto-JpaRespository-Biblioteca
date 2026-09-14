@@ -31,7 +31,7 @@ public class EmprestimosService {
         Livro livro = livroRepository.findById(request.livroId())
                 .orElseThrow();
 
-        Emprestimos emprestimos = emprestimosMapper.toEntity(request , usuario , livro);
+        Emprestimos emprestimos = emprestimosMapper.toEntity(request , livro , usuario);
 
         Emprestimos emprestimosSalvo = emprestimosRepository.save(emprestimos);
 
