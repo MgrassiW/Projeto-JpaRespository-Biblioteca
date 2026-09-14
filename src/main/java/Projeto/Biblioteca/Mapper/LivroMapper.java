@@ -4,7 +4,9 @@ import Projeto.Biblioteca.DTO.LivroRequest;
 import Projeto.Biblioteca.DTO.LivroResponse;
 import Projeto.Biblioteca.Entity.Livro;
 import io.swagger.v3.oas.annotations.media.Content;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LivroMapper {
 
     public Livro toEntity(LivroRequest request) {

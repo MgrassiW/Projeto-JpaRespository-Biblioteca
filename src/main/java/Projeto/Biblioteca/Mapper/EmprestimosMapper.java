@@ -6,7 +6,9 @@ import Projeto.Biblioteca.Entity.Emprestimos;
 import Projeto.Biblioteca.Entity.Livro;
 import Projeto.Biblioteca.Entity.Usuario;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
 @RequiredArgsConstructor
 public class EmprestimosMapper {
 

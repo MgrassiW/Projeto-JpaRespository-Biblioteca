@@ -3,7 +3,9 @@ package Projeto.Biblioteca.Mapper;
 import Projeto.Biblioteca.DTO.UsuarioRequest;
 import Projeto.Biblioteca.DTO.UsuarioResponse;
 import Projeto.Biblioteca.Entity.Usuario;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UsuarioMapper {
 
     public Usuario toEntity(UsuarioRequest request) {
