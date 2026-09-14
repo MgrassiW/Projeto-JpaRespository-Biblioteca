@@ -38,7 +38,7 @@ public class LivroController {
         return livroService.findById(id);
     }
 
-    @PutMapping("/{usuario}/{id}")
+    @PutMapping("/{id}")
     public LivroResponse update(@RequestBody LivroRequest request , @PathVariable Long id) {
 
         return livroService.update(request , id);

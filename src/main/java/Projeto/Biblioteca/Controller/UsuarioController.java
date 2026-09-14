@@ -34,7 +34,7 @@ public class UsuarioController {
         return usuarioService.findById(id);
     }
 
-    @PutMapping("/{usuario}/{id}")
+    @PutMapping("/{id}")
     public UsuarioResponse update(@RequestBody UsuarioRequest request , @PathVariable Long id) {
 
         return usuarioService.update(request , id);

@@ -37,7 +37,7 @@ public class EmprestimoController {
         return emprestimosService.findById(id);
     }
 
-    @PutMapping("/{usuario}/{id}")
+    @PutMapping("/{id}")
     public EmprestimoResponse update(@RequestBody EmprestimoRequest request , @PathVariable Long id) {
 
         return emprestimosService.update(request , id);
