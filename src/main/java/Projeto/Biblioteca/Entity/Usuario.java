@@ -27,4 +27,11 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private Set<Emprestimos> emprestimos;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private ROLE role;
+
+
+
 }

@@ -13,6 +13,7 @@ public class UsuarioMapper {
         return Usuario.builder()
                 .nome(request.nome())
                 .email(request.email())
+                .role(request.role())
                 .build();
     }
 
@@ -21,7 +22,8 @@ public class UsuarioMapper {
         return new UsuarioResponse(
                 usuario.getId(),
                 usuario.getNome(),
-                usuario.getEmail()
+                usuario.getEmail(),
+                usuario.getRole()
         );
     }
 
