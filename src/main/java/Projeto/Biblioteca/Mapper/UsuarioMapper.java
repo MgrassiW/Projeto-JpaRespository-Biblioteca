@@ -2,6 +2,7 @@ package Projeto.Biblioteca.Mapper;
 
 import Projeto.Biblioteca.DTO.UsuarioRequest;
 import Projeto.Biblioteca.DTO.UsuarioResponse;
+import Projeto.Biblioteca.Entity.ROLE;
 import Projeto.Biblioteca.Entity.Usuario;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,8 @@ public class UsuarioMapper {
         return Usuario.builder()
                 .nome(request.nome())
                 .email(request.email())
-                .role(request.role())
+                .senha(request.senha())
+                .role(ROLE.user)
                 .build();
     }
 
@@ -22,8 +24,7 @@ public class UsuarioMapper {
         return new UsuarioResponse(
                 usuario.getId(),
                 usuario.getNome(),
-                usuario.getEmail(),
-                usuario.getRole()
+                usuario.getEmail()
         );
     }
 

@@ -22,12 +22,15 @@ public class Usuario {
     @Column(name = "nome" , nullable = false)
     private String nome;
 
+    @Column(name = "senha", nullable = false)
+    private String senha;
+
     @Column(name = "email" , unique = true)
     private String email;
 
     @OneToMany(mappedBy = "usuario")
     private Set<Emprestimos> emprestimos;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private ROLE role;

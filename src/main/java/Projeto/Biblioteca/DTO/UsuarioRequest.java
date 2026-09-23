@@ -6,6 +6,7 @@ public record UsuarioRequest (
 
         String nome,
         String email,
-        ROLE role
+        String senha
+
 ){
 }

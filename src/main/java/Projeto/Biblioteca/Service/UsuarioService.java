@@ -6,6 +6,7 @@ import Projeto.Biblioteca.Entity.Usuario;
 import Projeto.Biblioteca.Mapper.UsuarioMapper;
 import Projeto.Biblioteca.Repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,10 +17,13 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
     private final UsuarioMapper usuarioMapper;
+    private final PasswordEncoder passwordEncoder;
 
     public UsuarioResponse save(UsuarioRequest request) {
 
         Usuario usuario = usuarioMapper.toEntity(request);
+
+        usuario.setSenha(passwordEncoder.encode(request.senha()));
 
         Usuario usuarioSalvo = usuarioRepository.save(usuario);
 
@@ -28,7 +32,6 @@ public class UsuarioService {
     }
 
     public List<UsuarioResponse> findAll() {
-
 
         return usuarioRepository.findAll().stream()
                 .map(usuarioMapper :: toResponse)
